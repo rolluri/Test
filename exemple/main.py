@@ -1,14 +1,17 @@
 from tkinter import *
 from tkinter import ttk
 import json
-root = Tk()
+import createAllItem
 
-with open('colorJson.json','r') as colors:
+root = Tk()
+root.geometry("900x500")
+
+
+with open("colorItem.json", "r") as colors:
     colorMap = json.load(colors)
 
-root.geometry("500x500")
-print(colorMap)
+root.configure(bg = colorMap["White"])
+startFrame = createAllItem.crateFrame()
 
-#mainFrame = ttk.Frame(width=700,height=300,bg = colorMap)
 
 root.mainloop()
